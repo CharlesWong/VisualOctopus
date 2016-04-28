@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package model;
+
+message ScraperConfig {
+	string TaskFile = 1;
+	repeated string Proxies = 2;
+	int32 ThreadNum = 3;
+	int32 ValidImgNum = 4;
+
+	string DataFolder = 32;
+	string ArchiveFolder = 33;
+	string TmpFolder = 34;
+}

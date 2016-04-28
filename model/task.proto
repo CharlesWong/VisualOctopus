@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package model;
+
+message SocialImageTask{
+	TaskType Type = 1;
+	IdProfileTask IdProfileTask = 2;
+	ImageTask ImageTask = 3;
+}
+
+message IdProfileTask {
+	int64 BeginId = 1;
+	int64 EndId = 2;
+	string UrlPattern = 3;
+}
+
+message ImageTask {
+	
+}
+
+enum TaskType {
+	UNKNOWN_TASK = 0;
+	JIAYUAN = 1;
+	BAIHE = 2;
+	RENREN = 3;
+}
+
+message JiayuanTask {
+	SocialImageTask SocialImageTask = 1;
+}
+
+message BaiheTask {
+	SocialImageTask SocialImageTask = 1;
+}
+
+message RenrenTask {
+	SocialImageTask SocialImageTask = 1;
+}
+
+message ScraperTask {
+	TaskType Type = 1;
+	string Data = 2;
+}
+
+message ScraperTasks {
+	repeated ScraperTask Tasks = 1;
+}
